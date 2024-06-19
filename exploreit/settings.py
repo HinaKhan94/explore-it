@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-)7a74sq&3*v%*ubpgf!5out60vm3=x(y3nq^vvjy(hp$buen(#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-hinakhan94-exploreit-uwq63yaonc6.ws-eu110.gitpod.io']
+ALLOWED_HOSTS = ['8000-hinakhan94-exploreit-uwq63yaonc6.ws-eu110.gitpod.io','8000-hinakhan94-exploreit-uwq63yaonc6.ws-eu114.gitpod.io']
 
 
 # Application definition
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'exploreit.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -116,7 +116,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
