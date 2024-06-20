@@ -3,3 +3,61 @@ body.main-bg {
     color: black;
     font-family: Montserrat, sans-serif;
 }
+
+<!--------------------------------------- Footer ------------------------------------>
+/* General Footer Styles */
+.footer-column1 {
+    text-align: center;
+  }
+  
+  .footer-heading {
+    text-align: center;
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+  }
+  
+  .footer-links {
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+  }
+  
+  .footer-links p {
+    margin: 0;
+    line-height: 1.2; /* Adjust the line height */
+  }
+
+  .footer-question {
+    font-size: xx-large;
+  }
+  
+  /* Social Icons */
+  .social-icons a {
+    color: #000;
+    margin: 0 10px;
+    font-size: 1.5rem;
+  }
+  
+  .social-icons a:hover {
+    color: #007bff;
+  }
+  <!--------------------------------------- media queries ------------------------------------>
+  /* Responsive Styles Footer */
+  @media (max-width: 768px) {
+    .footer-heading {
+      font-size: 1.2rem; /* Smaller font size for headings on mobile */
+    }
+    
+    .footer-links {
+      text-align: center;
+      display: block;
+    }
+  
+    .footer-links p {
+      line-height: 1.2; /* Adjust the line height for mobile */
+    }
+  
+    .social-icons a {
+      font-size: 1.2rem; /* Smaller font size for social icons on mobile */
+    }
+  }
