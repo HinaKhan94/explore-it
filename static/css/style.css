@@ -4,12 +4,12 @@ body.main-bg {
     color: black;
     font-family: Montserrat, sans-serif;
 }
-<!--------------------------------------- header ------------------------------------>
-<!--------------------------------------- Footer ------------------------------------>
+/*--------------------------------------- header ------------------------------------*/
+/*--------------------------------------- Footer ------------------------------------*/
 /* General Footer Styles */
 .footer-column1 {
-    text-align: center;
-  }
+  text-align: center;
+}
   
   .footer-heading {
     text-align: center;
@@ -34,7 +34,7 @@ body.main-bg {
   
   /* Social Icons */
   .social-icons a {
-    color: #000;
+    color: white;
     margin: 0 10px;
     font-size: 1.5rem;
   }
