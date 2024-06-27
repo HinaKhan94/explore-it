@@ -4,11 +4,12 @@ body.main-bg {
     color: black;
     font-family: Montserrat, sans-serif;
 }
-/*--------------------------------------- body ------------------------------------*/
+/*---------------------------------------  index carousel body ------------------------------------*/
 .text-overlay {
   background-color: whitesmoke;
   opacity: 0.9;
 }
+
 /*--------------------------------------- Footer ------------------------------------*/
 /* General Footer Styles */
 .footer-column1 {
@@ -46,11 +47,18 @@ body.main-bg {
   .social-icons a:hover {
     color: #007bff;
   }
-  <!--------------------------------------- media queries ------------------------------------>
+  /*--------------------------------------- media queries ------------------------------------*/
   /* Responsive Styles Footer */
   @media (max-width: 768px) {
     .footer-heading {
       font-size: 1.2rem; /* Smaller font size for headings on mobile */
+    }
+
+    .carousel-caption {
+      position: static !important;
+      transform: none; /* Reset transform for static positioning */
+      width: auto; /* Adjust width as needed for mobile */
+      padding: 10px; /* Adjust padding as needed for mobile */
     }
     
     .footer-links {

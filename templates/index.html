@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container-fluid" style="margin: 60px 0 5px 0;">
+<div class="container-fluid" style="margin-top: 60px;">
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             {% for todo in todos %}
@@ -11,7 +11,7 @@
             {% for todo in todos %}
                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
                     <img src="{{ todo.image.url }}" class="d-block w-100" alt="{{ todo.title }}">
-                    <div class="carousel-caption d-none d-md-block text-overlay" style="color:black;">
+                    <div class="carousel-caption text-overlay" style="color: black;">
                         <h3>{{ todo.title }}</h3>
                         <p><i class="fa-solid fa-tag"></i> Category: {{ todo.category.name }}</p>
                         <p>{{ todo.description }}</p>
@@ -31,5 +31,4 @@
         </button>
     </div>
 </div>
-
 {% endblock %}
