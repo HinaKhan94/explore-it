@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,9 +25,15 @@ SECRET_KEY = 'django-insecure-)7a74sq&3*v%*ubpgf!5out60vm3=x(y3nq^vvjy(hp$buen(#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-hinakhan94-exploreit-uwq63yaonc6.ws-eu110.gitpod.io','8000-hinakhan94-exploreit-uwq63yaonc6.ws-eu114.gitpod.io']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '8000-hinakhan94-exploreit-uwq63yaonc6.ws-eu114.gitpod.io'
+]
 
-
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-hinakhan94-exploreit-uwq63yaonc6.ws-eu114.gitpod.io'
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -120,6 +126,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
+# Media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
