@@ -25,14 +25,14 @@
           <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav mx-auto">
                   <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
                   </li>
                   <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Categories
                       </a>
                       <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Ages: 3-6 years</a></li>
+                          <li><a class="dropdown-item" href="{% url 'category_3_to_6_years' %}">Ages: 3-6 years</a></li>
                           <li><a class="dropdown-item" href="#">Ages: 7-15 years</a></li>
                           <li><a class="dropdown-item" href="#">Ages: 16-25 years</a></li>
                           <li><a class="dropdown-item" href="#">Ages: 16-35 years</a></li>

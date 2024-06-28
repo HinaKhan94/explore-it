@@ -1,29 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="card">
-    <img src="..." class="card-img-top" alt="...">
-  
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="container mt-5">
+    <div class="row">
+      <h3>All Categories</h3>
+        {% for todo in todos %}
+        <div class="col-lg-4 mb-4">
+            <div class="card">
+                {% if todo.image %}
+                    <img src="{{ todo.image.url }}" class="card-img-top" alt="{{ todo.title }}">
+                {% elif todo.image_url %}
+                    <img src="{{ todo.image_url }}" class="card-img-top" alt="{{ todo.title }}">
+                {% else %}
+                    <img src="/static/media/default.jpg" class="card-img-top" alt="{{ todo.title }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ todo.title }}</h5>
+                    <p class="card-text">{{ todo.description }}</p>
+                    <a href="{% url 'todo_detail' slug=todo.slug %}" class="btn btn-success">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>No activities found in this category.</p>
+        {% endfor %}
     </div>
-  </div>
-  
-  <div class="card" aria-hidden="true">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title placeholder-glow">
-        <span class="placeholder col-6"></span>
-      </h5>
-      <p class="card-text placeholder-glow">
-        <span class="placeholder col-7"></span>
-        <span class="placeholder col-4"></span>
-        <span class="placeholder col-4"></span>
-        <span class="placeholder col-6"></span>
-        <span class="placeholder col-8"></span>
-      </p>
-      <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
-    </div>
-  </div>
+</div>
 {% endblock %}

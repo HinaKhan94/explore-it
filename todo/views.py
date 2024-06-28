@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Todo
+from .models import Todo, Category
 
 def index(request):
     todos = Todo.objects.all()
@@ -15,3 +15,12 @@ def todo_detail(request, slug):
         'related_todos': related_todos,
         'range': range(5),
     })
+
+def category_3_to_6_years(request):
+    # Fetch the Category object for "3-6 years"
+    category = Category.objects.get(name='ages: 3-6 years')
+    
+    # Fetch all Todo objects related to this category
+    todos = Todo.objects.filter(category=category)
+    
+    return render(request, 'categories/ages1.html', {'todos': todos})
