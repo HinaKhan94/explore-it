@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load mathfilters %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-8" style="margin-top: 27px;">
+            <div class="card mb-4">
+                {% if todo.image %}
+                    <img src="{{ todo.image.url }}" class="card-img-top" alt="{{ todo.title }}">
+                {% elif todo.image_url %}
+                    <img src="{{ todo.image_url }}" class="card-img-top" alt="{{ todo.title }}">
+                {% else %}
+                    <img src="/static/media/default.jpg" class="card-img-top" alt="{{ todo.title }}">
+                {% endif %}
+                <div class="card-body">
+                    <h3 class="card-title">{{ todo.title }}</h3>
+                    <p class="card-text"><strong>Category:</strong> {{ todo.category.name }}</p>
+                    <p class="card-text"><strong>Location:</strong> {{ todo.location }}</p>
+                    <p>
+                        <strong>Rating:</strong>
+                        {% for i in range %}
+                            {% if i < todo.rating %}
+                                {% if i == todo.rating|floatformat %}
+                                    <i class="fa fa-star-half"></i>
+                                {% else %}
+                                    <i class="fa fa-star"></i>
+                                {% endif %}
+                            {% else %}
+                                <i class="fa fa-star-o"></i>
+                            {% endif %}
+                        {% endfor %}
+                    </p>                    
+                    <p class="card-text"><strong>Description:</strong></p>
+                    <p class="card-text">{{ todo.description }}</p>
+                    <p class="card-text"><strong>Price:</strong> ${{ todo.price }}</p>
+                    <a href="{% url 'index' %}" class="btn btn-primary">Back to List</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+            <div class="card my-4">
+                <h5 class="card-header">Related Activities</h5>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        {% for related_todo in related_todos %}
+                            <li class="media mb-3">
+                                {% if related_todo.image %}
+                                    <img class="mr-3" src="{{ related_todo.image.url }}" alt="{{ related_todo.title }}" style="width: 64px; height: 64px;">
+                                {% else %}
+                                    <img class="mr-3" src="/static/media/default.jpg" alt="{{ related_todo.title }}" style="width: 64px; height: 64px;">
+                                {% endif %}
+                                <div class="media-body">
+                                    <h6 class="mt-0 mb-1"><a href="{% url 'todo_detail' slug=related_todo.slug %}">{{ related_todo.title }}</a></h6>
+                                    <p>{{ related_todo.description|truncatewords:10 }}</p>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card my-4">
+                <h5 class="card-header">Additional Information</h5>
+                <div class="card-body">
+                    <p>Here you can place additional information or advertisements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
