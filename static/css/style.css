@@ -16,6 +16,20 @@ html, body {
   background-color: whitesmoke;
   opacity: 0.9;
 }
+/*---------------------------------------  Breadcrumbs ------------------------------------*/
+.breadcrumb-item+.breadcrumb-item::before  {
+  float: none !important;
+}
+.breadcrumb {
+  color: black;
+}
+
+.breadcrumb a {
+  color:black;
+}
+.breadcrumb-item.active {
+  color: green !important;
+}
 
 /*--------------------------------------- Footer ------------------------------------*/
 /* General Footer Styles */
@@ -68,7 +82,7 @@ html, body {
     }
 
     .carousel-wrapper {
-      padding-right: 23px !important;
+      padding-right: 15px !important;
     }
 
     .carousel-caption {
