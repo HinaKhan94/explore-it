@@ -34,7 +34,7 @@
                     <p class="card-text"><strong>Description:</strong></p>
                     <p class="card-text">{{ todo.description }}</p>
                     <p class="card-text"><strong>Price:</strong> ${{ todo.price }}</p>
-                    <a href="{% url 'index' %}" class="btn btn-primary">Back to List</a>
+                    <a href="{% url 'index' %}" class="btn btn-success">Back to List</a>
                 </div>
             </div>
         </div>
@@ -53,6 +53,7 @@
                                     <img class="mr-3" src="/static/media/default.jpg" alt="{{ related_todo.title }}" style="width: 64px; height: 64px;">
                                 {% endif %}
                                 <div class="media-body">
+                                    <br>
                                     <h6 class="mt-0 mb-1"><a href="{% url 'todo_detail' slug=related_todo.slug %}">{{ related_todo.title }}</a></h6>
                                     <p>{{ related_todo.description|truncatewords:10 }}</p>
                                 </div>

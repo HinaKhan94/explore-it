@@ -4,6 +4,13 @@ body.main-bg {
     color: black;
     font-family: Montserrat, sans-serif;
 }
+html, body {
+  height: 100%;
+}
+
+.container-fluid {
+  min-height: 100%;
+}
 /*---------------------------------------  index carousel body ------------------------------------*/
 .text-overlay {
   background-color: whitesmoke;
@@ -12,6 +19,12 @@ body.main-bg {
 
 /*--------------------------------------- Footer ------------------------------------*/
 /* General Footer Styles */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
 .footer-column1 {
   text-align: center;
 }
@@ -54,11 +67,22 @@ body.main-bg {
       font-size: 1.2rem; /* Smaller font size for headings on mobile */
     }
 
+    .carousel-wrapper {
+      padding-right: 23px !important;
+    }
+
     .carousel-caption {
       position: static !important;
       transform: none; /* Reset transform for static positioning */
       width: auto; /* Adjust width as needed for mobile */
       padding: 10px; /* Adjust padding as needed for mobile */
+    }
+
+    .carousel-mobile {
+      height: 283px !important; /* Allow container height to adjust based on content */
+    }
+    .carousel .carousel-item img {
+      object-fit: contain !important;
     }
     
     .footer-links {
